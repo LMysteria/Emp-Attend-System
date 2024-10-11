@@ -1,4 +1,4 @@
-package main.example.demo;
+package com.example.emp_attend_system;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
