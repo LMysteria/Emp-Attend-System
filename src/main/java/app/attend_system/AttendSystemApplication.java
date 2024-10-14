@@ -1,13 +1,13 @@
-package com.example.emp_attend_system;
+package app.attend_system;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class EmpAttendSystemApplication {
+public class AttendSystemApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(EmpAttendSystemApplication.class, args);
+		SpringApplication.run(AttendSystemApplication.class, args);
 	}
 
 }

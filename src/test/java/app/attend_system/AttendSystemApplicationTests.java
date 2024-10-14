@@ -1,10 +1,10 @@
-package com.example.emp_attend_system;
+package app.attend_system;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class EmpAttendSystemApplicationTests {
+class AttendSystemApplicationTests {
 
 	@Test
 	void contextLoads() {
