@@ -36,5 +36,5 @@ build/
 /jte-classes/
 
 ### Database keys ###
-src/main/resources/keys/database.env
+src/main/resources/keys/database.properties
 
