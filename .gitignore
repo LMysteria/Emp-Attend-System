@@ -34,3 +34,7 @@ build/
 
 ### JTE ###
 /jte-classes/
+
+### Database keys ###
+src/main/resources/keys/database.env
+
