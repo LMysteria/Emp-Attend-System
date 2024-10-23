@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 import app.attend_system.backend.database.models.Employee;
 
 @Repository
-public interface EmployeeRepository extends JpaRepository<Employee, Long>{
+public interface EmployeeRepository extends JpaRepository<Employee, String>{
 }
 
