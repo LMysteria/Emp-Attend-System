@@ -1,6 +1,7 @@
 package app.attend_system.database.models;
 
 import jakarta.annotation.Nonnull;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
@@ -14,6 +15,7 @@ import java.util.Date;
 public class Employee{
     @Id
     @Nonnull
+    @Column(columnDefinition = "char(6)")
     private String employee_ID;
 
     @Nonnull
@@ -22,6 +24,7 @@ public class Employee{
     @Nonnull
     private String fullname;
 
+    @Column(columnDefinition = "char(1)")
     private String gender;
 
     private Date date_of_birth;
