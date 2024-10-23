@@ -1,4 +1,4 @@
-package app.attend_system.database.schemas;
+package app.attend_system.backend.database.schemas;
 
 public class User{
     private String username;

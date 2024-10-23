@@ -1,15 +1,15 @@
-package app.attend_system;
+package app.attend_system.backend;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import app.attend_system.database.models.Role;
+import app.attend_system.backend.database.models.Role;
 import com.google.gson.Gson;
 
-import app.attend_system.database.schemas.*;
-import app.attend_system.database.crud.DatabaseController;
+import app.attend_system.backend.database.schemas.*;
+import app.attend_system.backend.database.crud.DatabaseController;
 import org.springframework.web.bind.annotation.RequestBody;
 
 

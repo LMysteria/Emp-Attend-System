@@ -1,11 +1,11 @@
-package app.attend_system.database.crud;
+package app.attend_system.backend.database.crud;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import java.util.ArrayList;
 import java.util.Iterator;
-import app.attend_system.database.models.Employee;
-import app.attend_system.database.models.Role;
+import app.attend_system.backend.database.models.Employee;
+import app.attend_system.backend.database.models.Role;
 @Controller
 public class DatabaseController {
     @Autowired
