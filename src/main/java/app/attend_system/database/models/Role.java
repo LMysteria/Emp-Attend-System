@@ -1,4 +1,4 @@
-package app.attend_system.backend.database.models;
+package app.attend_system.database.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
