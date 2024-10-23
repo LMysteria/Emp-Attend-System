@@ -34,3 +34,7 @@ build/
 
 ### JTE ###
 /jte-classes/
+
+### Database keys ###
+backend/src/main/resources/keys/database.properties
+

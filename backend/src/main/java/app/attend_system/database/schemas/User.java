@@ -1,6 +1,6 @@
-package app.attend_system.Schemas;
+package app.attend_system.database.schemas;
 
-public class User {
+public class User{
     private String username;
     private String password;
 
