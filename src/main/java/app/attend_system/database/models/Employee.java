@@ -2,13 +2,11 @@ package app.attend_system.database.models;
 
 import jakarta.annotation.Nonnull;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import jakarta.persistence.GenerationType;
-import java.time.LocalDate;
+import java.util.Date;
 
 
 @Entity
@@ -16,8 +14,7 @@ import java.time.LocalDate;
 public class Employee{
     @Id
     @Nonnull
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer employee_ID;
+    private String employee_ID;
 
     @Nonnull
     private String password;
@@ -25,21 +22,21 @@ public class Employee{
     @Nonnull
     private String fullname;
 
-    private Boolean gender;
+    private String gender;
 
-    private LocalDate date_of_birth;
+    private Date date_of_birth;
 
     private String department;
 
     private String email;
 
-    private String phonenumber;
+    private String phone_number;
 
     @ManyToOne
     @JoinColumn(name = "role_id")
     private Role role_id;
 
-    public Integer getId() {
+    public String getId() {
         return employee_ID;
     }
 
@@ -51,11 +48,11 @@ public class Employee{
         return fullname;
     }
 
-    public Boolean getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public LocalDate getDate_of_birth() {
+    public Date getDate_of_birth() {
         return date_of_birth;
     }
     
@@ -68,7 +65,7 @@ public class Employee{
     }
 
     public String getPhonenumber() {
-        return phonenumber;
+        return phone_number;
     }
 
     public Role getRole_id() {
