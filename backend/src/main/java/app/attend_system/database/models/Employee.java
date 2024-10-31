@@ -39,6 +39,9 @@ public class Employee{
     @JoinColumn(name = "role_id")
     private Role role_id;
 
+    public Employee() {
+    }
+
     public String getId() {
         return employee_ID;
     }

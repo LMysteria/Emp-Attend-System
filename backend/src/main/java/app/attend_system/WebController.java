@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import app.attend_system.database.models.Employee;
 import app.attend_system.database.models.Role;
 import com.google.gson.Gson;
 
@@ -25,15 +27,27 @@ public class WebController {
         return "Hello" + name;
     }
 
-    @GetMapping("/getAllEmployee")
-    public String getCurrentUser(){
+    @GetMapping("/getallEmployee")
+    public String getallEmployee(){
         Gson gson = new Gson();
-        return gson.toJson(dbController.findAllEmployee());
+        return gson.toJson(dbController.findallEmployee());
+    }
+
+    @GetMapping("/getallRole")
+    public String getallRole(){
+        Gson gson = new Gson();
+        return gson.toJson(dbController.findallRole());
     }
 
     @PostMapping("/createRole")
-    public Role newRole(@RequestBody() Role newrole) { 
+    public Role newRole(@RequestBody() RoleSchema newrole) { 
         return dbController.createRole(newrole);
     }
+
+    @PostMapping("/createEmployee")
+    public Employee newEmployee(@RequestBody() Employee newEmployee) {
+        return dbController.createEmployee(newEmployee);
+    }
+    
     
 }

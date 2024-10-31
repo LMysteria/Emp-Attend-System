@@ -17,6 +17,15 @@ public class Role {
 
     private Integer access_level;
 
+    public Role() {
+    }
+
+    public Role(String role_name, Integer access_level) {
+        this.role_name = role_name;
+        this.access_level = access_level;
+    }
+
+
     public Integer getRole_id() {
         return role_id;
     }
