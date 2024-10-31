@@ -1,5 +1,8 @@
 package app.attend_system;
 
+import java.time.Duration;
+import java.time.Instant;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,7 +18,6 @@ import app.attend_system.database.crud.DatabaseController;
 import org.springframework.web.bind.annotation.RequestBody;
 
 
-
 @RestController
 public class WebController {
     @Autowired
@@ -27,26 +29,56 @@ public class WebController {
         return "Hello" + name;
     }
 
+    //GET APIs
     @GetMapping("/getallEmployee")
     public String getallEmployee(){
+        String action = "getallEmployee";
+        Instant start = Instant.now();
+
         Gson gson = new Gson();
-        return gson.toJson(dbController.findallEmployee());
+        String response = gson.toJson(dbController.findallEmployee());
+
+        long timeElapse = Duration.between(start, Instant.now()).toMillis();
+        System.out.println(Utility.log(action, timeElapse));
+        return response;
     }
 
     @GetMapping("/getallRole")
     public String getallRole(){
+        String action = "getallRole";
+        Instant start = Instant.now();
+
         Gson gson = new Gson();
-        return gson.toJson(dbController.findallRole());
+        String response = gson.toJson(dbController.findallRole());
+
+        long timeElapse = Duration.between(start, Instant.now()).toMillis();
+        System.out.println(Utility.log(action, timeElapse));
+        return response;
     }
 
+    //POST APIs
     @PostMapping("/createRole")
     public Role newRole(@RequestBody() RoleSchema newrole) { 
-        return dbController.createRole(newrole);
+        String action = "createRole";
+        Instant start = Instant.now();        
+        
+        Role response = dbController.createRole(newrole);
+
+        long timeElapse = Duration.between(start, Instant.now()).toMillis();
+        System.out.println(Utility.log(action, timeElapse));
+        return response;
     }
 
     @PostMapping("/createEmployee")
     public Employee newEmployee(@RequestBody() Employee newEmployee) {
-        return dbController.createEmployee(newEmployee);
+        String action = "createEmployee";
+        Instant start = Instant.now();        
+
+        Employee response = dbController.createEmployee(newEmployee);
+
+        long timeElapse = Duration.between(start, Instant.now()).toMillis();
+        System.out.println(Utility.log(action, timeElapse));
+        return response;
     }
     
     
