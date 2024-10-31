@@ -6,7 +6,6 @@ import java.time.Instant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import app.attend_system.database.models.Employee;
@@ -22,11 +21,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 public class WebController {
     @Autowired
     DatabaseController dbController;
-    User testUser = new User("Mystic","huh");
     
-    @GetMapping("/hello")
-    public String hello(@RequestParam(name="name", required = false, defaultValue = "World") String name) {
-        return "Hello" + name;
+    @GetMapping("/")
+    public String MainPage() {
+        return "This is the main page of Attendance System";
     }
 
     //GET APIs
