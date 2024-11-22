@@ -4,10 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Optional;
+
 import app.attend_system.database.models.Employee;
 import app.attend_system.database.models.Role;
 import app.attend_system.database.schemas.EmployeeSchema;
 import app.attend_system.database.schemas.RoleSchema;
+
 @Controller
 public class DatabaseController {
     //split this controller if neccesary
@@ -23,8 +26,7 @@ public class DatabaseController {
        Iterator<Employee> emp_iter = employeeRepository.findAll().iterator();
        while (emp_iter.hasNext()) {
             Employee nextemp = emp_iter.next();
-            employees.add(new EmployeeSchema(nextemp.getId(), nextemp.getFullname(), nextemp.getGender(), nextemp.getDate_of_birth(),
-            nextemp.getDepartment(), nextemp.getEmail(), nextemp.getPhonenumber(), nextemp.getRole_id()));
+            employees.add(new EmployeeSchema(nextemp));
        }
        return employees;
     }
@@ -36,6 +38,10 @@ public class DatabaseController {
             roles.add(role_iter.next());
        }
        return roles;
+    }
+
+    public Optional<Role> findRolebyRole_id(int role_id){
+        return roleRepository.findById(role_id);
     }
 
     //CREATE QUERY

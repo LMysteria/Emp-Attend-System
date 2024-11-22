@@ -1,12 +1,10 @@
 package app.attend_system.database.schemas;
 
-import java.text.SimpleDateFormat;
-
-import app.attend_system.database.models.Employee;
-
-public class EmployeeSchema {
+public class CreateEmployeeSchema {
     private String employee_ID;
 
+    private String password;
+    
     private String fullname;
 
     private String gender;
@@ -19,17 +17,18 @@ public class EmployeeSchema {
 
     private String phone_number;
 
-    private String role;
+    private int role_id;
 
-    public EmployeeSchema(Employee employee){
-        this.employee_ID = employee.getId();
-        this.fullname = employee.getFullname();
-        this.gender = employee.getGender();
-        this.date_of_birth = new SimpleDateFormat("yyyy-MM-dd").format(employee.getDate_of_birth());
-        this.department = employee.getDepartment();
-        this.email = employee.getEmail();
-        this.phone_number = employee.getPhonenumber();
-        this.role = employee.getRole().getRole_name();
+    public CreateEmployeeSchema(String employee_ID, String fullname, String password, String gender, String date_of_birth, String department, String email, String phone_number, int role_id){
+        this.employee_ID = employee_ID;
+        this.fullname = fullname;
+        this.password = password;
+        this.gender = gender;
+        this.date_of_birth= date_of_birth;
+        this.department = department;
+        this.email = email;
+        this.phone_number = phone_number;
+        this.role_id = role_id;
     }
 
     public String getEmployee_ID() {
@@ -37,6 +36,9 @@ public class EmployeeSchema {
     }
     public String getFullname() {
         return fullname;
+    }
+    public String getPassword() {
+        return password;
     }
     public String getGender() {
         return gender;
@@ -53,7 +55,7 @@ public class EmployeeSchema {
     public String getPhone_number() {
         return phone_number;
     }
-    public String getRole() {
-        return role;
+    public int getRole() {
+        return role_id;
     }
 }
