@@ -39,6 +39,24 @@ public class Employee{
     @JoinColumn(name = "role_id")
     private Role role_id;
 
+
+    
+    public Employee(String employee_ID, String password, String fullname, String gender, Date date_of_birth,
+            String department, String email, String phone_number, Role role_id) {
+        this.employee_ID = employee_ID;
+        this.password = password;
+        this.fullname = fullname;
+        this.gender = gender;
+        this.date_of_birth = date_of_birth;
+        this.department = department;
+        this.email = email;
+        this.phone_number = phone_number;
+        this.role_id = role_id;
+    }
+
+    public Employee() {
+    }
+
     public String getId() {
         return employee_ID;
     }
@@ -71,7 +89,7 @@ public class Employee{
         return phone_number;
     }
 
-    public Role getRole_id() {
+    public Role getRole() {
         return role_id;
     }
 }
